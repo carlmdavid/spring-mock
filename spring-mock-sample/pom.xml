@@ -32,7 +32,7 @@
 		<dependency>
 			<groupId>org.spockframework</groupId>
 			<artifactId>spock-spring</artifactId>
-			</dependency>
+		</dependency>
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib-nodep</artifactId>
@@ -47,22 +47,25 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
+
 			<plugin>
-				<groupId>org.codehaus.gmaven</groupId>
-				<artifactId>gmaven-plugin</artifactId>
+				<groupId>org.codehaus.gmavenplus</groupId>
+				<artifactId>gmavenplus-plugin</artifactId>
 				<version>1.5</version>
-				<configuration>
-					<providerSelection>2.0</providerSelection>
-					<source />
-				</configuration>
 				<executions>
 					<execution>
 						<goals>
+							<goal>addSources</goal>
+							<goal>addTestSources</goal>
+							<goal>compile</goal>
 							<goal>testCompile</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
+			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>groovy-maven-plugin</artifactId> 
+				<version>1.5</version> </plugin> -->
+
 
 		</plugins>
 	</build>
